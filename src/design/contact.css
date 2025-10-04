@@ -1,0 +1,137 @@
+/* ===== Contact Education Wrapper with Gradient Background ===== */
+.contact-education {
+  background: linear-gradient(135deg, #1f1f1f, #2d2d2d, #1a1a1a);
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.5);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.contact-education:hover {
+  transform: translateY(-4px);
+}
+
+/* ===== Section Titles ===== */
+.section-title {
+  font-size: 18px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #3b82f6, #06b6d4); /* Blue → Cyan */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 8px;
+}
+
+/* ===== Contact Items ===== */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  font-size: 14px;
+  color: #ddd;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+.contact-item:hover{
+  color: #f1850a;   
+
+}
+
+/* ===== Contact Icons (Gradient) ===== */
+.contact-icon {
+  font-size: 20px;
+  background: linear-gradient(135deg, #3b82f6, #06b6d4); /* Blue → Cyan */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  flex-shrink: 0;
+}
+
+.contact-icon-placeholder {
+  width: 20px; 
+  display: inline-block;
+}
+
+/* ===== Links ===== */
+.contact-item a {
+    text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+
+  /* fallback color for browsers that don't support gradient text */
+  color: #ffffff;
+
+  /* gradient used as text fill */
+  background: linear-gradient(90deg, #3b82f6, #06b6d4);
+
+  /* standard + prefixed background-clip for compatibility */
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  /* make the text transparent so the gradient shows through (WebKit) */
+  -webkit-text-fill-color: transparent;
+
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 220px;
+}
+
+.contact-item a:hover {
+  opacity: 0.8;
+}
+
+/* ===== Divider ===== */
+.divider {
+  border: none;
+  border-top: 1px solid #333;
+  margin: 20px 0;
+}
+
+/* ===== Yukos Education Item ===== */
+.elem {
+  font-size: 14px;
+  color: #bbb;               /* subtle light gray */
+  margin-left: 8px;          /* slight indent for hierarchy */
+  display: block;            /* ensures it sits below the title nicely */
+  transition: color 0.3s ease;
+}
+
+.elem:hover {
+  color: #f1850a;           /* highlight with your blue gradient tone */
+}
+
+.divider-elem {
+  border: none;
+  border-top: 1px solid #26edf4;
+  margin: 10px 0;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 600px) {
+  .contact-education {
+    padding: 15px;
+  }
+
+  .section-title {
+    font-size: 16px;
+  }
+
+  .contact-item {
+    font-size: 13px;
+    flex-wrap: wrap;
+  }
+
+  .contact-item a {
+    max-width: 100%;
+    caret-color: #3b82f6; /* Fallback color for small screens */
+  }
+
+  
+}

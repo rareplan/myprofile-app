@@ -1,0 +1,40 @@
+/* slow spin for the ring */
+.spin-ring {
+  animation: spin 6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* profile animations combined */
+.animated-profile {
+  animation: float 3s ease-in-out infinite,
+             tilt 5s ease-in-out infinite,
+             glow 2.5s ease-in-out infinite;
+}
+
+/* floating up and down */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+/* slight tilt left and right */
+@keyframes tilt {
+  0%, 100% { transform: rotate(0deg); }
+  25%      { transform: rotate(1.5deg); }
+  75%      { transform: rotate(-1.5deg); }
+}
+
+/* glowing pulse */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(80,150,255,0.4);
+  }
+  50% {
+    box-shadow: 0 0 45px rgba(255,80,200,0.8);
+  }
+}

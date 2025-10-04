@@ -1,0 +1,278 @@
+.aboutme-elem {
+  font-size: 16px;
+  text-align: justify;         /* ✔ pantay kaliwa at kanan */
+  text-justify: inter-word;    /* ✔ mas maayos na spacing */
+  line-height: 1.6;            /* ✔ dagdag readability */
+  margin-left: 10px;
+  text-indent: 30px;           /* ✔ unang linya may tab gaya sa formal docs */
+  opacity: 0;
+  transform: translateX(-30px);   /* slide from left */
+  animation: slideFadeIn 1.5s ease forwards, gradientText 6s ease infinite 1.5s;
+}
+
+/* Entrance animation */
+@keyframes slideFadeIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Gradient shimmer animation */
+@keyframes gradientText {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.contact-education {
+  background: linear-gradient(135deg, #1f1f1f, #2d2d2d, #1a1a1a);
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.5);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+   max-height: 730px;  /* limit ang taas */
+  overflow-y: auto;   /* scroll sa Y axis */
+}
+
+.contact-education:hover {
+  transform: translateY(-4px);
+}
+
+
+/* ===== Section Titles ===== */
+.skills-elem {
+  list-style: none;   /* alisin default bullet */
+  padding-left: 0;
+  margin-left: 0;
+  
+}
+
+.skills-elem li {
+  font-size: 16px;
+  /* pantay kaliwa-kanan */
+  line-height: 1.9;
+  margin-left: 25px;
+
+ 
+
+
+  /* animation setup */
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: slideFadeIn 1.5s ease forwards, gradientText 6s ease infinite 1.5s;
+}
+
+/* Default bullet (optional, di gagamitin pag meron nth-child) */
+.skills-elem li::before {
+  margin-right: 8px;
+}
+
+/* 🎯 tunay na emoji per <li> (13 items total) */
+.skills-elem li:nth-child(1)::before  { content: "📄 "; }  /* MS Office */
+.skills-elem li:nth-child(2)::before  { content: "🗣️ "; } /* Communication */
+.skills-elem li:nth-child(3)::before  { content: "⭐ "; }  /* Leadership */
+.skills-elem li:nth-child(4)::before  { content: "💻 "; }  /* Web Dev */
+.skills-elem li:nth-child(5)::before  { content: "🎬 "; }  /* Video Editing */
+.skills-elem li:nth-child(6)::before  { content: "🌐 "; }  /* Networking */
+.skills-elem li:nth-child(7)::before  { content: "🎨 "; }  /* Graphic Design */
+.skills-elem li:nth-child(8)::before  { content: "🤖 "; }  /* Chatbot */
+.skills-elem li:nth-child(9)::before  { content: "⚙️ "; }  /* Automation */
+.skills-elem li:nth-child(10)::before { content: "📊 "; }  /* Data Viz */
+.skills-elem li:nth-child(11)::before { content: "🗄️ "; }  /* Database */
+.skills-elem li:nth-child(12)::before { content: "🖌️ "; }  /* UI/UX */
+.skills-elem li:nth-child(13)::before { content: "🎥 "; }  /* Motion Design */
+
+/* Animations */
+@keyframes slideFadeIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes gradientText {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+/* Gradient animation for the text */
+@keyframes textGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Name Animation */
+@keyframes epicEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(-10deg) translateY(50px);
+    filter: blur(10px);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1) rotate(2deg) translateY(-10px);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0) translateY(0);
+    filter: blur(0);
+  }
+}
+
+.name-elem {
+  color: #ffffff;   /* simple white text */
+  animation: epicEntrance 1.5s ease-out forwards;
+  opacity: 0;
+}
+
+
+
+
+.position-elem {
+  font-size: 30px;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.position-elem:hover {
+  color: #f1850a;   /* orange on hover */
+}
+
+/* ===== Carousel Styles ===== */
+.carousel {
+  position: relative;
+}
+
+.slide {
+  opacity: 0;
+  transform: scale(1.1);
+  animation: zoomSlide 18s infinite;
+}
+
+.slide:nth-child(1) {
+  animation-delay: 0s;
+}
+.slide:nth-child(2) {
+  animation-delay: 6s;
+}
+.slide:nth-child(3) {
+  animation-delay: 12s;
+}
+
+/* Zoom + Fade animation */
+@keyframes zoomSlide {
+  0% {
+    opacity: 0;
+    transform: scale(1.1) translateX(10%);
+  }
+  5% {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1.05) translateX(0);
+  }
+  35% {
+    opacity: 0;
+    transform: scale(1.1) translateX(-10%);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.1) translateX(-10%);
+  }
+}
+
+
+/* Overlay Text Animation */
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  animation: fadeText 18s infinite;
+}
+
+.slide:nth-child(1) .overlay { animation-delay: 0s; }
+.slide:nth-child(2) .overlay { animation-delay: 6s; }
+.slide:nth-child(3) .overlay { animation-delay: 12s; }
+
+.overlay h3 {
+  color: #fff;
+  font-size: clamp(1.25rem, 2vw, 2rem);
+  font-weight: 700;
+  text-align: center;
+}
+
+@keyframes fadeText {
+  0%, 100% { opacity: 0; transform: translateY(20px); }
+  10%, 25% { opacity: 1; transform: translateY(0); }
+  30% { opacity: 0; transform: translateY(-20px); }
+}
+
+
+/* ===== General Animations image ===== */
+
+@keyframes slideZoomLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-80px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes slideZoomRight {
+  0% {
+    opacity: 0;
+    transform: translateX(80px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+.animate-slideZoomLeft {
+  animation: slideZoomLeft 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.animate-slideZoomRight {
+  animation: slideZoomRight 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* ====== animation for backrground ======== */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientMove 10s ease infinite;
+}
+
