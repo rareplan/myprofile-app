@@ -23,7 +23,8 @@ I appreciate collaboration and open communication, knowing that technology is st
 
 <div className="relative flex flex-col md:flex-row items-center gap-8 mt-10 p-10 rounded-2xl shadow-2xl overflow-hidden">
   {/* Animated background */}
-  <div className="absolute inset-0 animate-gradient bg-gradient-to-r from-orange-900 via-gray-900 to-black"></div>
+  <div className="absolute inset-0 animate-gradient bg-gradient-to-r from-[#FF6500] via-[#1E3E62] to-[#0B192C]"></div>
+
 
   {/* Content wrapper para hindi madala ng background */}
   <div className="relative flex flex-col md:flex-row items-center gap-8 w-full">
@@ -47,9 +48,6 @@ I appreciate collaboration and open communication, knowing that technology is st
     </div>
   </div>
 </div>
-
-
-
       {/* Carousel Section */}
       <div className="relative w-full max-w-4xl mx-auto overflow-hidden rounded-2xl shadow-2xl">
         <div className="carousel relative w-full h-72 md:h-[28rem]">
@@ -93,84 +91,134 @@ I appreciate collaboration and open communication, knowing that technology is st
     </div>
   );
 
-      case "Skills":
-        return (
-          <ul className="skills-elem">
-            <li>Microsoft Office Suite: Proficient in MS Word, MS Excel, and MS PowerPoint</li>
-            <li>Communication & Interpersonal Skills: Strong verbal and written communication; effective team collaboration</li>
-            <li>Leadership: Demonstrated leadership abilities with a strong sense of responsibility</li>
-            <li>Web Development: Experienced in HTML, React, CSS, and JavaScript for web page design</li>
-            <li>Video Editing: Skilled in multimedia video editing</li>
-            <li>Networking: Knowledgeable in network installation and setup</li>
-            <li>Graphic Design: Proficient in Canva and Adobe Photoshop</li>
-            <li>Chatbot Development: Experience creating chatbots using ManyChat</li>
-            <li>Automation Tools: Familiar with Make (formerly Integromat)</li>
-            <li>Data Visualization: Proficient in Google Data Studio</li>
-            <li>Database Management: Knowledge of PostgreSQL</li>
-            <li>UI/UX Design: Skilled in using Figma for user interface and experience design</li>
-            <li>Motion Design: Experience with Jitter for animated UI and motion graphics</li>  
-          </ul>
-        );
-      case "Experience/Internship":
+ case "Skills":
   return (
-    <div className="experience-elem">
-      <h2>On-the-Job Training (OJT)</h2>
-      <p className="nameschool-elem">Laguna State Polytechnic University – San Pablo Campus</p>
-      <p className="date">September 2019 – December 2019</p>
+    <div className="skills-container emoji-style">
+      {[
+        { icon: "🖥️", text: "Microsoft Office Suite: Proficient in MS Word, MS Excel, and MS PowerPoint" },
+        { icon: "🗣️", text: "Communication & Interpersonal Skills: Strong verbal and written communication; effective team collaboration" },
+        { icon: "👑", text: "Leadership: Demonstrated leadership abilities with a strong sense of responsibility" },
+        { icon: "💻", text: "Web Development: Experienced in HTML, CSS, and JavaScript for web page design" },
+        { icon: "🎬", text: "Video Editing: Skilled in multimedia video editing" },
+        { icon: "🛰️", text: "Networking: Knowledgeable in network installation and setup" },
+        { icon: "🎨", text: "Graphic Design: Proficient in Canva and Adobe Photoshop" },
+        { icon: "🤖", text: "Chatbot Development: Experience creating chatbots using ManyChat" },
+        { icon: "⚙️", text: "Automation Tools: Familiar with Make (formerly Integromat)" },
+        { icon: "📊", text: "Data Visualization: Proficient in Google Data Studio" },
+        { icon: "💾", text: "Database Management: Knowledge of PostgreSQL" },
+        { icon: "🧩", text: "UI/UX Design: Skilled in using Figma for user interface and experience design" },
+        { icon: "🎞️", text: "Motion Design: Experience with Jitter for animated UI and motion graphics" },
+      ].map((skill, index) => (
+        <div className="skill-card-emoji" key={index}>
+          <div className="emoji-wrapper">
+            <span className="emoji">{skill.icon}</span>
+            <p className="skill-text">{skill.text}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
 
-      <ul className="experience-list">
-        <li>Tracked alumni graduates through social media platforms</li>
-        <li>Designed and edited the alumni magazine cover and seminar event materials</li>
-        <li>Assisted with network installation in the ICTS and Alumni offices</li>
-        <li>Created multimedia video presentations for LSPU events</li>
-        <li>Sorted and organized documents for the Alumni Office</li>
-      </ul>
-      <div className="boundary-elem">
-      <h2 >FDS Asya Philippines Inc. </h2>
-      <p className="nameschool-elem">Position : Developer I </p>
-      <p className="date">February 16 2021 - March 17, 2022</p>
-
-      <ul className="experience-list">
-        <li>Developed a new UI design for the Whitelist Webtool using HTML, CSS, and JavaScript</li>
-        <li>Published Chablast in the chatbot system</li>
-        <li>Integrated multiple modules using Integromat for dynamic webpage interaction</li>
-        <li>Gathered data for chatbot performance reports</li>
-        <li>Created interactive reports using Google Data Studio linked to the database</li>
-        <li>Enhanced features of the Loan Whitelist Webtool for improved functionality</li>
-      </ul>
+     case "Experience/Internship":
+  return (
+    <div className="experience-elem space-y-16">
+      {/* OJT Experience */}
+      <div className="experience-card">
+        <div className="experience-img left animate-slideInLeft">
+          <img
+            src="https://source.unsplash.com/800x600/?students,training"
+            alt="OJT Experience"
+          />
+        </div>
+        <div className="experience-content right animate-slideInRight">
+          <h2>On-the-Job Training (OJT)</h2>
+          <p className="nameschool-elem">
+            Laguna State Polytechnic University – San Pablo Campus
+          </p>
+          <p className="date">September 2019 – December 2019</p>
+          <ul className="experience-list">
+            <li>Tracked alumni graduates through social media platforms</li>
+            <li>Designed and edited the alumni magazine cover and seminar event materials</li>
+            <li>Assisted with network installation in the ICTS and Alumni offices</li>
+            <li>Created multimedia video presentations for LSPU events</li>
+            <li>Sorted and organized documents for the Alumni Office</li>
+          </ul>
+        </div>
       </div>
-      <div className="boundary-elem">
-      <h2 >Accenture, Inc.</h2>
-      <p className="nameschool-elem">Position : Data Analysis</p>
-      <p className="date">August 25, 2022 - September 25, 2023</p>
 
-      <ul className="experience-list">
-        <li>Processed and managed transactional data efficiently</li>
-        <li>Conducted data analysis and exploration to identify patterns and insights</li>
-        <li>Researched and retrieved data to support process flow optimization</li>
-        <li>Released processed data within the emulator environment</li>
-        <li>Resolved issues related to data prompts through problem-solving and debugging</li>
-        <li>Collaborated with team members to ensure data accuracy and integrity</li>
-      </ul>
+      {/* FDS Asya */}
+      <div className="experience-card reverse">
+        <div className="experience-img right animate-slideInRight">
+          <img
+            src="https://source.unsplash.com/800x600/?developer,office"
+            alt="FDS Asya"
+          />
+        </div>
+        <div className="experience-content left animate-slideInLeft">
+          <h2>FDS Asya Philippines Inc.</h2>
+          <p className="nameschool-elem">Position : Developer I</p>
+          <p className="date">February 16 2021 - March 17, 2022</p>
+          <ul className="experience-list">
+            <li>Developed a new UI design for the Whitelist Webtool using HTML, CSS, and JavaScript</li>
+            <li>Published Chablast in the chatbot system</li>
+            <li>Integrated multiple modules using Integromat for dynamic webpage interaction</li>
+            <li>Gathered data for chatbot performance reports</li>
+            <li>Created interactive reports using Google Data Studio linked to the database</li>
+            <li>Enhanced features of the Loan Whitelist Webtool for improved functionality</li>
+          </ul>
+        </div>
       </div>
-       <div className="boundary-elem">
-      <h2 >QCREDIT CORP.</h2>
-      <p className="nameschool-elem">Position : Graphic Designer and Marketing Officer</p>
-      <p className="date">March 6, 2024 - Present</p>
 
-      <ul className="experience-list">
-        <li>Designed promotional flyers for the company’s campaigns and events</li>
-        <li>Created poster ads for Facebook, TikTok, and YouTube using Canva</li>
-        <li>Edited video content for the "Kwentong QCredit" segment, highlighting customer stories and experiences</li>
-        <li>Created social media graphics using Figma and Adobe Photoshop for various platforms</li>
-        <li>Edited marketing videos using Wondershare Filmora for digital advertising campaigns</li>
-        <li>Designed web page layouts and promotional materials aligned with the company’s branding guidelines</li>
-        <li>Collaborated with the marketing team to develop creative concepts for advertising campaigns</li>
-        <li>Collaborated with the marketing team to deliver impactful and customer-focused content for QCredit’s online platforms</li>
-      </ul>
+      {/* Accenture */}
+      <div className="experience-card">
+        <div className="experience-img left animate-slideInLeft">
+          <img
+            src="https://source.unsplash.com/800x600/?data,analytics"
+            alt="Accenture"
+          />
+        </div>
+        <div className="experience-content right animate-slideInRight">
+          <h2>Accenture, Inc.</h2>
+          <p className="nameschool-elem">Position : Data Analysis</p>
+          <p className="date">August 25, 2022 - September 25, 2023</p>
+          <ul className="experience-list">
+            <li>Processed and managed transactional data efficiently</li>
+            <li>Conducted data analysis and exploration to identify patterns and insights</li>
+            <li>Researched and retrieved data to support process flow optimization</li>
+            <li>Released processed data within the emulator environment</li>
+            <li>Resolved issues related to data prompts through problem-solving and debugging</li>
+            <li>Collaborated with team members to ensure data accuracy and integrity</li>
+          </ul>
+        </div>
+      </div>
+
+      {/* QCREDIT */}
+      <div className="experience-card reverse">
+        <div className="experience-img right animate-slideInRight">
+          <img
+            src="https://source.unsplash.com/800x600/?graphicdesign,marketing"
+            alt="QCREDIT Corp"
+          />
+        </div>
+        <div className="experience-content left animate-slideInLeft">
+          <h2>QCREDIT CORP.</h2>
+          <p className="nameschool-elem">Position : Graphic Designer and Marketing Officer</p>
+          <p className="date">March 6, 2024 - Present</p>
+          <ul className="experience-list">
+            <li>Designed promotional flyers for the company’s campaigns and events</li>
+            <li>Created poster ads for Facebook, TikTok, and YouTube using Canva</li>
+            <li>Edited video content for the "Kwentong QCredit" segment</li>
+            <li>Created social media graphics using Figma and Adobe Photoshop</li>
+            <li>Edited marketing videos using Wondershare Filmora</li>
+            <li>Designed web page layouts and promotional materials aligned with branding</li>
+            <li>Collaborated with the marketing team to develop creative concepts</li>
+            <li>Delivered impactful and customer-focused content for QCredit’s online platforms</li>
+          </ul>
+        </div>
       </div>
     </div>
   );
+
 
     case "Seminar / Training":
   return (
