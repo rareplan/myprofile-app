@@ -2,6 +2,7 @@ import React from "react";
 import "../design/profile.css";
 import "../design/intership.css";
 import "../design/seminar-elem.css";
+import "../design/responsive.css";
 import aboutme from "../design/aboutme.png"
 
 function RightPanel({ activeTab }) {
@@ -119,7 +120,7 @@ I appreciate collaboration and open communication, knowing that technology is st
     </div>
   );
 
-     case "Experience/Internship":
+  case "Experience":
   return (
     <div className="experience-elem space-y-16">
       {/* OJT Experience */}
@@ -384,21 +385,23 @@ I appreciate collaboration and open communication, knowing that technology is st
   };
 
   return (
-    <main className="flex-1 ">
-      <div className="contact-education">
-<h1 className="name-elem text-3xl md:text-5xl font-bold">
-  Ron Arnold B. Replan
-</h1>
+  <main className="flex-1 px-4 sm:px-6 md:px-8 lg:px-12 py-6 overflow-x-hidden">
+  <div className="background max-w-5xl mx-auto bg-neutral-900/60 rounded-2xl p-6 md:p-10 shadow-2xl backdrop-blur-md">
+    <h1 className="name-elem text-2xl sm:text-3xl md:text-5xl font-bold text-white text-center md:text-left">
+      Ron Arnold B. Replan
+    </h1>
 
+    <p className="position-elem text-gray-400 text-center md:text-left mb-6">
+      IT Professional
+    </p>
 
-        <p className="position-elem">IT Professional</p>
+    <div className="mt-6">
+      <h2 className="font-semibold text-lg mb-2 text-white">{activeTab}</h2>
+      <div className="text-gray-300">{renderContent()}</div>
+    </div>
+  </div>
+</main>
 
-        <div className="mt-6">
-          <h2 className="font-semibold text-lg mb-2">{activeTab}</h2>
-          <div className="text-gray-300">{renderContent()}</div>
-        </div>
-      </div>
-    </main>
   );
 }
 

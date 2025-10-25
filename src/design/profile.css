@@ -1,16 +1,33 @@
-.aboutme-elem {
-  font-size: 16px;
-  text-align: justify;         /* ✔ pantay kaliwa at kanan */
-  text-justify: inter-word;    /* ✔ mas maayos na spacing */
-  line-height: 1.6;            /* ✔ dagdag readability */
-  margin-left: 10px;
-  text-indent: 30px;           /* ✔ unang linya may tab gaya sa formal docs */
-  opacity: 0;
-  transform: translateX(-30px);   /* slide from left */
-  animation: slideFadeIn 1.5s ease forwards, gradientText 6s ease infinite 1.5s;
+/* ===== Root Variables ===== */
+:root {
+  --accent: #f1850a;
+  --white: #ffffff;
+  --bg-dark: #1f1f1f;
+  --shadow: 0 6px 14px rgba(0, 0, 0, 0.45);
+  --radius: 14px;
 }
 
-/* Entrance animation */
+/* ===== About Me Element ===== */
+.aboutme-elem {
+  font-size: clamp(0.95rem, 0.8rem + 0.5vw, 1rem);
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.7;
+  margin-left: 0.625rem;
+  text-indent: 1.875rem;
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: slideFadeIn 1.5s ease forwards,
+             gradientText 6s ease infinite 1.5s;
+  background: linear-gradient(90deg, #3b82f6, #06b6d4, #3b82f6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 300% 300%;
+  will-change: transform, opacity, background-position;
+}
+
+/* ===== Entrance & Gradient Animations ===== */
 @keyframes slideFadeIn {
   to {
     opacity: 1;
@@ -18,29 +35,43 @@
   }
 }
 
-/* Gradient shimmer animation */
 @keyframes gradientText {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-.contact-education {
-  background: linear-gradient(135deg, #1f1f1f, #2d2d2d, #1a1a1a);
-  padding: 20px;
-  border-radius: 14px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.5);
-  margin-bottom: 20px;
+/* ===== Contact Education Card (Scrollable) ===== */
+.background {
+  background: rgba(31, 31, 31, 0.6); /* semi-transparent dark overlay */
+  backdrop-filter: blur(8px); /* optional – gives glass effect */
+  padding: clamp(1rem, 1.5vw, 1.25rem);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  margin-bottom: 1.25rem;
   transition: transform 0.3s ease;
-   max-height: 730px;  /* limit ang taas */
-  overflow-y: auto;   /* scroll sa Y axis */
+  max-height: 585px;
+  overflow-y: auto;
+
+  /* Scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: #3b82f6 transparent;
 }
 
-.contact-education:hover {
-  transform: translateY(-4px);
+/* Chrome/Edge scrollbar */
+.background::-webkit-scrollbar {
+  width: 6px;
+}
+.background::-webkit-scrollbar-thumb {
+  background-color: #3b82f6;
+  border-radius: 8px;
+}
+.background::-webkit-scrollbar-track {
+  background: transparent;
 }
 
-/* Name Animation */
+
+/* ===== Name Entrance ===== */
 @keyframes epicEntrance {
   0% {
     opacity: 0;
@@ -60,43 +91,39 @@
 }
 
 .name-elem {
-  color: #ffffff;   /* simple white text */
+  color: var(--white);
   animation: epicEntrance 1.5s ease-out forwards;
   opacity: 0;
 }
 
 .position-elem {
-  font-size: 30px;
-  color: white;
+  font-size: clamp(1.5rem, 1rem + 1vw, 1.875rem);
+  color: var(--white);
   transition: color 0.3s ease;
 }
 
 .position-elem:hover {
-  color: #f1850a;   /* orange on hover */
+  color: var(--accent);
 }
 
-/* ===== Carousel Styles ===== */
+/* ===== Carousel Section ===== */
 .carousel {
   position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
 }
 
 .slide {
   opacity: 0;
   transform: scale(1.1);
   animation: zoomSlide 18s infinite;
+  will-change: transform, opacity;
 }
 
-.slide:nth-child(1) {
-  animation-delay: 0s;
-}
-.slide:nth-child(2) {
-  animation-delay: 6s;
-}
-.slide:nth-child(3) {
-  animation-delay: 12s;
-}
+.slide:nth-child(1) { animation-delay: 0s; }
+.slide:nth-child(2) { animation-delay: 6s; }
+.slide:nth-child(3) { animation-delay: 12s; }
 
-/* Zoom + Fade animation */
 @keyframes zoomSlide {
   0% {
     opacity: 0;
@@ -120,8 +147,7 @@
   }
 }
 
-
-/* Overlay Text Animation */
+/* ===== Overlay Text Animation ===== */
 .overlay {
   position: absolute;
   inset: 0;
@@ -131,6 +157,7 @@
   background: rgba(0, 0, 0, 0.45);
   opacity: 0;
   animation: fadeText 18s infinite;
+  will-change: opacity, transform;
 }
 
 .slide:nth-child(1) .overlay { animation-delay: 0s; }
@@ -138,8 +165,8 @@
 .slide:nth-child(3) .overlay { animation-delay: 12s; }
 
 .overlay h3 {
-  color: #fff;
-  font-size: clamp(1.25rem, 2vw, 2rem);
+  color: var(--white);
+  font-size: clamp(1.25rem, 1rem + 1vw, 2rem);
   font-weight: 700;
   text-align: center;
 }
@@ -150,50 +177,32 @@
   30% { opacity: 0; transform: translateY(-20px); }
 }
 
-
-/* ===== General Animations image ===== */
-
+/* ===== Side Animations (Images or Cards) ===== */
 @keyframes slideZoomLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-80px) scale(0.9);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-  }
+  from { opacity: 0; transform: translateX(-80px) scale(0.9); }
+  to { opacity: 1; transform: translateX(0) scale(1); }
 }
 
 @keyframes slideZoomRight {
-  0% {
-    opacity: 0;
-    transform: translateX(80px) scale(0.9);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-  }
+  from { opacity: 0; transform: translateX(80px) scale(0.9); }
+  to { opacity: 1; transform: translateX(0) scale(1); }
 }
 
 .animate-slideZoomLeft {
   animation: slideZoomLeft 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  will-change: transform, opacity;
 }
 
 .animate-slideZoomRight {
   animation: slideZoomRight 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  will-change: transform, opacity;
 }
 
-/* ====== animation for backrground ======== */
+/* ===== Animated Gradient Background ===== */
 @keyframes gradientMove {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .animate-gradient {
@@ -201,13 +210,12 @@
   animation: gradientMove 10s ease infinite;
 }
 
-
-/* ===== About Me Section SKILL ===== */
+/* ===== Skills Section ===== */
 .skills-container.emoji-style {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
-  padding: 2rem;
+  padding: clamp(1rem, 1.5vw, 2rem);
   animation: fadeIn 1s ease forwards;
 }
 
@@ -216,17 +224,18 @@
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 16px;
   padding: 1.2rem 1rem;
-  color: #f5f5f5;
-  font-size: 0.95rem;
+  color: var(--white);
+  font-size: clamp(0.9rem, 0.8rem + 0.4vw, 1rem);
   line-height: 1.6rem;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   opacity: 0;
   transform: translateY(20px);
   animation: fadeUp 0.8s ease forwards;
   display: flex;
   align-items: center;
+  will-change: transform, opacity;
 }
 
 .emoji-wrapper {
@@ -245,7 +254,7 @@
   flex: 1;
   font-weight: 400;
   text-align: left;
-  color: #ffffff;
+  color: var(--white);
   letter-spacing: 0.3px;
 }
 
@@ -260,25 +269,30 @@
   transform: rotate(8deg) scale(1.25);
 }
 
+/* ===== Fade Animations ===== */
 @keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.96);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
 }
 
+/* ===== Responsive Tweaks ===== */
+@media (max-width: 600px) {
+  .contact-education {
+    padding: 1rem;
+    max-height: 500px;
+  }
+
+  .overlay h3 {
+    font-size: clamp(1rem, 0.9rem + 0.5vw, 1.3rem);
+  }
+
+  .skills-container.emoji-style {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}

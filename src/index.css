@@ -3,4 +3,15 @@
 @tailwind utilities;
 
 
+/* Optional custom scrollbar for smooth horizontal scroll */
+header::-webkit-scrollbar {
+  height: 6px;
+}
+header::-webkit-scrollbar-thumb {
+  background-color: #4b5563;
+  border-radius: 4px;
+}
+header::-webkit-scrollbar-track {
+  background: transparent;
+}
 

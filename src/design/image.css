@@ -1,6 +1,7 @@
-/* slow spin for the ring */
+/* ===== Smooth Spin for Decorative Ring ===== */
 .spin-ring {
   animation: spin 6s linear infinite;
+  will-change: transform; /* optimize for GPU */
 }
 
 @keyframes spin {
@@ -9,32 +10,84 @@
   }
 }
 
-/* profile animations combined */
+/* ===== Animated Profile Container ===== */
 .animated-profile {
-  animation: float 3s ease-in-out infinite,
-             tilt 5s ease-in-out infinite,
-             glow 2.5s ease-in-out infinite;
+  animation:
+    float 3s ease-in-out infinite,
+    tilt 5s ease-in-out infinite,
+    glow 2.5s ease-in-out infinite;
+  will-change: transform, box-shadow;
+  display: inline-block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* floating up and down */
+/* ===== Floating Up and Down ===== */
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-10px); }
-}
-
-/* slight tilt left and right */
-@keyframes tilt {
-  0%, 100% { transform: rotate(0deg); }
-  25%      { transform: rotate(1.5deg); }
-  75%      { transform: rotate(-1.5deg); }
-}
-
-/* glowing pulse */
-@keyframes glow {
   0%, 100% {
-    box-shadow: 0 0 25px rgba(80,150,255,0.4);
+    transform: translateY(0);
   }
   50% {
-    box-shadow: 0 0 45px rgba(255,80,200,0.8);
+    transform: translateY(-10px);
   }
+}
+
+/* ===== Slight Tilt Left and Right ===== */
+@keyframes tilt {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(1.5deg);
+  }
+  75% {
+    transform: rotate(-1.5deg);
+  }
+}
+
+/* ===== Glowing Pulse ===== */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(80, 150, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 45px rgba(255, 80, 200, 0.8);
+  }
+}
+
+/* ===== Responsive Animation Tweaks ===== */
+@media (max-width: 768px) {
+  /* Slightly slower + smaller motion for mobile */
+  .animated-profile {
+    animation:
+      floatMobile 4s ease-in-out infinite,
+      tiltMobile 6s ease-in-out infinite,
+      glow 3s ease-in-out infinite;
+  }
+
+  @keyframes floatMobile {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-6px);
+    }
+  }
+
+  @keyframes tiltMobile {
+    0%, 100% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(1deg);
+    }
+    75% {
+      transform: rotate(-1deg);
+    }
+  }
+}
+
+/* ===== Optional: Pause on Hover for Interactivity ===== */
+.animated-profile:hover {
+  animation-play-state: paused;
+  cursor: pointer;
 }
