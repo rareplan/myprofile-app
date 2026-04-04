@@ -1,0 +1,138 @@
+/* responsive.css */
+
+/* ============ GLOBAL CONTAINER FIXES ============ */
+.contact-education {
+  padding: 1rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.aboutme-section,
+.experience-elem,
+.skills-container,
+.seminar-training {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* ============ ABOUT ME SECTION ============ */
+.aboutme-section img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.aboutme-section p {
+  line-height: 1.75;
+  color: #e2e8f0;
+}
+
+/* Adjust the gradient box */
+.aboutme-section .relative.flex {
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+/* Responsive tweak for medium screens */
+@media (max-width: 1024px) {
+  .aboutme-section .relative.flex {
+    flex-direction: column !important;
+    gap: 1rem;
+    text-align: center;
+  }
+  .aboutme-section h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* ============ EXPERIENCE SECTION ============ */
+.experience-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  background-color: rgba(15, 23, 42, 0.5);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.experience-card img {
+  width: 100%;
+  border-radius: 0.75rem;
+  object-fit: cover;
+}
+
+.experience-card.reverse {
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 1024px) {
+  .experience-card,
+  .experience-card.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+  .experience-content {
+    width: 100%;
+  }
+}
+
+/* ============ SKILLS GRID ============ */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.skill-card-emoji {
+  background: rgba(30, 58, 138, 0.3);
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.skill-card-emoji:hover {
+  transform: scale(1.03);
+}
+
+/* ============ SEMINAR GRID ============ */
+.seminar-training {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.seminar-training img {
+  width: 100%;
+  border-radius: 0.75rem;
+  object-fit: cover;
+}
+
+/* Fix hover scaling from breaking layout */
+.seminar-training .group:hover {
+  z-index: 5;
+  transform: scale(1.03);
+}
+
+/* ============ MOBILE OPTIMIZATION ============ */
+@media (max-width: 640px) {
+  .name-elem {
+    font-size: 1.75rem !important;
+  }
+  .position-elem {
+    font-size: 1rem;
+  }
+  .aboutme-section {
+    padding: 0.5rem;
+  }
+  .aboutme-section .text-lg {
+    font-size: 1rem;
+  }
+  .experience-list {
+    padding-left: 1rem;
+    font-size: 0.9rem;
+  }
+}

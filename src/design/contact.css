@@ -1,0 +1,122 @@
+.contact-education {
+  padding: 1rem 1rem;
+  color: #f1f5f9;
+  background: rgba(11, 25, 44, 0.75); /* semi-transparent */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  width: 100%;
+  margin: 0 auto;
+
+  /* scrollable area */
+  max-height: 650px; /* adjust mo depende sa gusto mong taas */
+  overflow-y: auto;
+
+  /* scrollbar style */
+  scrollbar-width: thin;
+  scrollbar-color: #ff6500 transparent;
+}
+
+/* scrollbar for Chrome / Edge */
+.contact-education::-webkit-scrollbar {
+  width: 8px;
+}
+
+.contact-education::-webkit-scrollbar-thumb {
+  background-color: #ff6500;
+  border-radius: 10px;
+}
+
+.contact-education::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* title style */
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ff6500;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* items */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  margin: 0.5rem 0;
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.contact-icon {
+  color: #ff6500;
+  font-size: 1.5rem;
+}
+
+.contact-item a {
+  color: #e2e8f0;
+  word-break: break-all;
+  text-decoration: none;
+}
+
+.contact-item a:hover {
+  color: #ff6500;
+}
+
+/* dividers */
+.divider,
+.divider-elem {
+  border: 0;
+  border-top: 1px solid #ec8013;
+  margin: 1.5rem 0;
+}
+
+.education-list h3 {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.elem {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+}
+
+/* Responsive (mobile) */
+@media (max-width: 768px) {
+  .contact-education {
+    width: 95%;
+    padding: 1.5rem;
+    margin-top: 0;
+
+    /* disable scroll on small screens */
+    max-height: none;
+    overflow-y: visible;
+  }
+
+  .contact-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-item span,
+  .contact-item a {
+    font-size: 0.9rem;
+  }
+
+  .education-list h3 {
+    font-size: 1rem;
+  }
+
+  .elem {
+    font-size: 0.85rem;
+  }
+}
