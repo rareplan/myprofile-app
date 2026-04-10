@@ -43,6 +43,13 @@ import page5 from "../design/compro/page5.png"
 import page6 from "../design/compro/page6.png"
 import ui1 from "../design/uiux/ui1.png"
 import ui2 from "../design/uiux/ui2.png"
+import socmed1 from "../design/socmed/socmed1.png"
+import socmed2 from "../design/socmed/socmed2.png"
+import socmed3 from "../design/socmed/socmed3.png"
+import socmed4 from "../design/socmed/socmed4.png"
+import socmed5 from "../design/socmed/socmed5.png"
+import socmed6 from "../design/socmed/socmed6.png"
+
 
 
 function RightPanel({ activeTab }) {
@@ -354,13 +361,27 @@ I appreciate collaboration and open communication, knowing that technology is st
     case "Seminar / Training":
   return (
     <div className="seminar-training grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3">
+      
       {/* Seminar Card */}
       <div className="relative group bg-purple-600 rounded-xl shadow-lg p-4 transition-all duration-500 transform hover:scale-105 hover:rotate-1 hover:shadow-2xl animate-fadeIn">
+       
+          <a
+      href="https://example.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="View Seminar: 11th Philippine Youth Congress on Information Technology"
+      className="absolute inset-0 z-20"
+    ></a>
+       
+       
+       
+       
         <div className="overflow-hidden rounded-lg">
           <img
             src={y4it1}
             alt="Seminar 1"
             className="rounded-lg mb-3 transition-transform duration-500 group-hover:scale-110"
+            
           />
         </div>
         <h3 className="text-white font-bold text-lg">11thPhilippineYouth Congress on Information Technology (Y4iT) </h3>
@@ -436,6 +457,15 @@ I appreciate collaboration and open communication, knowing that technology is st
 
        {/* Another Card */}
       <div className="relative group bg-gray-600 rounded-xl shadow-lg p-4 transition-all duration-500 transform hover:scale-105 hover:rotate-2 hover:shadow-2xl animate-fadeIn">
+           <a
+      href="https://drive.google.com/file/d/1WoF7q_4RVAvP9LpG7mERC7NJ1nB4gaJu/view?usp=sharing"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="View Seminar: 11th Philippine Youth Congress on Information Technology"
+      className="absolute inset-0 z-20">
+
+      </a>
+        
         <div className="overflow-hidden rounded-lg">
           <img
             src={simpli1}
@@ -452,6 +482,14 @@ I appreciate collaboration and open communication, knowing that technology is st
 
        {/* Another Card */}
       <div className="relative group bg-purple-600 rounded-xl shadow-lg p-4 transition-all duration-500 transform hover:scale-105 hover:rotate-2 hover:shadow-2xl animate-fadeIn">
+    <a
+      href="https://drive.google.com/file/d/1aSPwIvoOCkjQOotGm_vuzWT79xYNLFVO/view?usp=sharing"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="View Seminar: 11th Philippine Youth Congress on Information Technology"
+      className="absolute inset-0 z-20">
+      </a>
+        
         <div className="overflow-hidden rounded-lg">
           <img
             src={simpli2}
@@ -468,6 +506,16 @@ I appreciate collaboration and open communication, knowing that technology is st
 
        {/* Another Card */}
       <div className="relative group bg-yellow-600 rounded-xl shadow-lg p-4 transition-all duration-500 transform hover:scale-105 hover:rotate-2 hover:shadow-2xl animate-fadeIn">
+             <a
+      href="https://drive.google.com/file/d/1x9m_Tzdwu6VArEIimwVCDFcbDOihuxRM/view?usp=sharing"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="View Seminar: 11th Philippine Youth Congress on Information Technology"
+      className="absolute inset-0 z-20">
+
+      </a>
+        
+        
         <div className="overflow-hidden rounded-lg">
           <img
             src={simpli3}
@@ -484,7 +532,18 @@ I appreciate collaboration and open communication, knowing that technology is st
       
 
        {/* Another Card */}
+
+       
       <div className="relative group bg-sky-600 rounded-xl shadow-lg p-4 transition-all duration-500 transform hover:scale-105 hover:rotate-2 hover:shadow-2xl animate-fadeIn">
+       
+          <a
+      href="https://drive.google.com/file/d/1kIOF2BozBajPt5Wt2nHbq6BV_lV41Zrg/view?usp=sharing"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="View Seminar: 11th Philippine Youth Congress on Information Technology"
+      className="absolute inset-0 z-20"
+    ></a>
+       
         <div className="overflow-hidden rounded-lg">
           <img
             src={simpli4}
@@ -502,6 +561,14 @@ I appreciate collaboration and open communication, knowing that technology is st
 
         {/* Another Card */}
       <div className="relative group bg-sky-600 rounded-xl shadow-lg p-4 transition-all duration-500 transform hover:scale-105 hover:rotate-2 hover:shadow-2xl animate-fadeIn">
+          <a
+      href="https://drive.google.com/file/d/1scLTAF7wuE91f2s6nXIQoq5hc_oJ_5om/view?usp=sharing"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="View Seminar: 11th Philippine Youth Congress on Information Technology"
+      className="absolute inset-0 z-20"
+    ></a>
+        
         <div className="overflow-hidden rounded-lg">
           <img
             src={pdf}
@@ -533,10 +600,23 @@ I appreciate collaboration and open communication, knowing that technology is st
         viewport={{ once: true }}
       >
         <h3 className="text-2xl font-bold mb-6 text-white">
-          UI/UX Designer
+          UI/UX DESIGN - MOBILE APPLICATION
         </h3>
 
         <SimpleCarousel images={[ui1, ui2]} />
+      </motion.div>
+
+       <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+      >
+        <h3 className="text-2xl font-bold mb-6 text-white">
+          UI/UX DESIGN - WEBTOOL SYSTMEN
+        </h3>
+
+        <SimpleCarousel images={[socmed1, socmed2, socmed3, socmed4, socmed5, socmed6]} />
       </motion.div>
 
       {/* ================= MARKETING FLYERS ================= */}
@@ -547,7 +627,7 @@ I appreciate collaboration and open communication, knowing that technology is st
         viewport={{ once: true }}
       >
         <h3 className="text-2xl font-bold mb-6 text-white">
-          QCredit Flyer
+          QCREDIT CORP. - FLYERS 
         </h3>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 md:gap-5">
@@ -576,7 +656,7 @@ I appreciate collaboration and open communication, knowing that technology is st
         viewport={{ once: true }}
       >
         <h3 className="text-2xl font-bold mb-6 text-white">
-          QCredit Poster
+          QCREDIT CORP. - POSTER Ads
         </h3>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 md:gap-5">
@@ -605,7 +685,7 @@ I appreciate collaboration and open communication, knowing that technology is st
         viewport={{ once: true }}
       >
         <h3 className="text-2xl font-bold mb-6 text-white">
-          Company Profile
+          QCREDIT CORP. - COMPANY PROFILE
         </h3>
 
        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 md:gap-5">
@@ -634,7 +714,7 @@ I appreciate collaboration and open communication, knowing that technology is st
         viewport={{ once: true }}
       >
         <h3 className="text-2xl font-bold mb-6 text-white">
-          QCredit Reels Video
+          QCREDIT CORP. - REELS VIDEO Ads
         </h3>
 
        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 md:gap-5">
@@ -675,7 +755,7 @@ I appreciate collaboration and open communication, knowing that technology is st
 
   return (
   <main className="flex-1 px-2 sm:px-4 md:px-6 lg:px-8 py-4 md:py-6 overflow-x-hidden">
-  <div className="background max-w-7xl xl:max-w-[100%] mx-auto min-h-[50vh] md:min-h-[80vh] lg:min-h-screen bg-neutral-900/60 rounded-2xl p-3 sm:p-4 md:p-6 lg:p-8 shadow-2xl backdrop-blur-md relative z-10">
+  <div className="background max-w-7xl  mx-auto min-h-[50vh] md:min-h-[80vh] lg:min-h-screen bg-neutral-900/60 rounded-2xl p-3 sm:p-4 md:p-6 lg:p-8 shadow-2xl backdrop-blur-md relative z-10">
     <h1 className="name-elem text-2xl sm:text-3xl md:text-5xl font-bold text-white text-center md:text-left"> Ron Arnold B. Replan </h1>
      <p className="position-elem text-gray-400 text-center md:text-left mb-6"> IT Professional </p>
      <div className="mt-6 text-left">

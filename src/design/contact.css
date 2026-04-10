@@ -9,8 +9,9 @@
   margin: 0 auto;
 
   /* scrollable area */
-  max-height: 650px; /* adjust mo depende sa gusto mong taas */
+  max-height: 78vh;
   overflow-y: auto;
+  height: 100%;
 
   /* scrollbar style */
   scrollbar-width: thin;
