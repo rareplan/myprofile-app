@@ -49,6 +49,8 @@ import socmed3 from "../design/socmed/socmed3.png"
 import socmed4 from "../design/socmed/socmed4.png"
 import socmed5 from "../design/socmed/socmed5.png"
 import socmed6 from "../design/socmed/socmed6.png"
+import capture1 from "../design/capture/capture1.png"
+import capture2 from "../design/capture/capture 2.png"
 
 
 
@@ -617,6 +619,20 @@ I appreciate collaboration and open communication, knowing that technology is st
         </h3>
 
         <SimpleCarousel images={[socmed1, socmed2, socmed3, socmed4, socmed5, socmed6]} />
+      </motion.div>
+
+
+     <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+      >
+        <h3 className="text-2xl font-bold mb-6 text-white">
+          UI/UX DESIGN - WEBSITE "CAPTURE"
+        </h3>
+
+        <SimpleCarousel images={[capture1, capture2]} />
       </motion.div>
 
       {/* ================= MARKETING FLYERS ================= */}
